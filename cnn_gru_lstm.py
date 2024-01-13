@@ -110,7 +110,7 @@ def build_iters(data_dir, max_records, q, horizon, splits, batch_size):
             out_list[i] = mx.io.NDArrayIter(data=x_ts,
                                    label=y_ts,
                                    batch_size=batch_size)
-    return out_list[0]    
+    return out_list[0],out_list[1],out_list[2]    
  
 def sym_gen(train_iter, q, filter_list, num_filter, dropout, rcells, skiprcells, seasonal_period, time_interval):
     input_feature_shape = train_iter.provide_data[0][1]
